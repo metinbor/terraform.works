@@ -1,7 +1,7 @@
 # Configure the AWS Provider
 provider "aws" {
   version = "~> 2.66"
-  region  = "${var.region}"
+  region  = "us-east-1"
 }
 
 #terraform { - we cannot have 2 terraform and due to the next code will move down the requiremen
