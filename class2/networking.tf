@@ -34,10 +34,10 @@ resource "aws_route_table_association" "c" {
   #availability_zone = "us-east-1c"
 }
 
-# resource "aws_eip" "nat" {
-#   vpc  = true
-# }
-# resource "aws_nat_gateway" "gw" {
-#   allocation_id = "${aws_eip.nat.id}"
-#   subnet_id     = "${aws_subnet.public1.id}"
-# }
+resource "aws_eip" "nat" { # -- nat gateway 
+   vpc  = true
+ }
+ resource "aws_nat_gateway" "gw" {
+   allocation_id = "${aws_eip.nat.id}"
+   subnet_id     = "${aws_subnet.public_subnet1.id}"
+ }
