@@ -2,7 +2,7 @@ region    =      "ap-southeast-2"
 
 # Below code is used to set backend only
 environment                     =   "sydney"
-s3_bucket                       =   "terraform-state-april-class-metin"
+s3_bucket                       =   "terraform-state-april-class-vitalie"
 s3_folder_project               =   "jenkins"
 s3_folder_region                =   "us-east-1"
 s3_folder_type                  =   "tools"

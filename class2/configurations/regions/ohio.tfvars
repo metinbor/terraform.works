@@ -1,4 +1,4 @@
-region = "us-eas-2"
+region = "us-east-2"
 
 # Below code is used to set backend only
 environment                     =   "vitalie"

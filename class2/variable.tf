@@ -1,4 +1,5 @@
 variable "region" {} 
+#variable "key_name" {}
 # -- depends on the network team
 variable "cidr_block" {}
 variable "public_cidr_block1" {} 
