@@ -3,7 +3,8 @@ resource "aws_instance" "my_instance" {
    instance_type = "t2.micro"
    key_name = "${aws_key_pair.bastion_key.key_name}"
    vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
-  subnet_id = "${aws_subnet.public_subnet1.id}"
+   subnet_id      = "${aws_subnet.public_subnet1.id}"
+   
 }
 #   user_data = <<EOF
 #     #!/bin/bash
