@@ -1,5 +1,5 @@
 variable "region" {} 
-#variable "key_name" {}
+variable "key_name" {}
 #variable "user" {}
 # -- depends on the network team
 variable "image_value" {}
@@ -20,6 +20,8 @@ variable "jenkins_version" {}
 variable "az1" {}
 variable "az2" {}
 variable "az3" {}
+
+variable "user" {}
 
 # variable "a" {}
 # variable "b" {}

@@ -23,7 +23,8 @@ java_version            = "-1.8.0-openjdk-devel"
 jenkins_version         = "jenkins"
 
 
-
+key_name = "ohio-key"
+user = "ec2-user"
 
 
 cidr_block = "10.0.0.0/16"

@@ -6,7 +6,7 @@ resource "null_resource" "jenkins_password" {
     provisioner "remote-exec" {
     connection {
       type        = "ssh"
-      user        = "ec2-user"
+      user        = "${var.user}"
       #user        = "${var.user}"
       private_key = "${file("~/.ssh/id_rsa")}"
       host        = "${aws_instance.my_instance.public_ip}"

@@ -10,7 +10,6 @@ data "aws_ami" "amazon" {
 resource "aws_instance" "my_instance" {
   ami                    = "${data.aws_ami.amazon.id}"
   instance_type          = "${var.instance_type}"
-  #image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
   availability_zone      = "${var.region}${var.az1}"
   vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
   subnet_id              = "${aws_subnet.public_subnet1.id}"
