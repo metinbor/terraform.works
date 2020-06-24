@@ -13,10 +13,10 @@ resource "null_resource" "jenkins_password" {
     }
     
     inline = [
-      "sudo yum install java-1.8.0-openjdk -y",
+      "sudo yum install java${var.java_version} -y",
       "curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo",
       "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
-      #"sudo yum install ${var.jenkins_version} -y",
+      "sudo yum install ${var.jenkins_version} -y",
       "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
       "sudo yum install -y jenkins",
       "sudo systemctl start jenkins",

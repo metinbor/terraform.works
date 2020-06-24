@@ -1,11 +1,41 @@
-resource "aws_instance" "my_instance" {
-   ami    = "ami-026dea5602e368e96"
-   instance_type = "t2.micro"
-   key_name = "${aws_key_pair.bastion_key.key_name}"
-   vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
-   subnet_id      = "${aws_subnet.public_subnet1.id}"
-   
+data "aws_ami" "amazon" {
+  most_recent = true
+  owners      = ["${var.owner_name}"]
+  filter {
+    name   = "name"
+    values = ["${var.image_value}"]
+  }
 }
+
+resource "aws_instance" "my_instance" {
+  ami                    = "${data.aws_ami.amazon.id}"
+  instance_type          = "${var.instance_type}"
+  #image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
+  availability_zone      = "${var.region}${var.az1}"
+  vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
+  subnet_id              = "${aws_subnet.public_subnet1.id}"
+  key_name = "${aws_key_pair.bastion_key.key_name}"
+
+}
+
+
+# image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
+# owner_name = "amazon"
+# instance_type = "t2.micro"
+# ami = "ami-0323c3dd2da7fb37d"
+
+
+
+
+
+# resource "aws_instance" "my_instance" {
+#    ami    = "ami-026dea5602e368e96"
+#    instance_type = "t2.micro"
+#    key_name = "${aws_key_pair.bastion_key.key_name}"
+#    vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
+#    subnet_id      = "${aws_subnet.public_subnet1.id}"
+   
+
 #   user_data = <<EOF
 #     #!/bin/bash
 
