@@ -102,5 +102,84 @@ Components of the VPC:
     - shared modules for common infrastructure patterns
     - combine multiple providers consistently
 
-# Our code
+# Terraform Structure.
 
+
+ * [backend.tf](https://www.terraform.io/docs/backends/index.html)
+    - backends determine where state is tored. 
+
+ * [igw.tf](https://www.terraform.io/docs/providers/aws/r/internet_gateway.html)
+    
+    - provided resources to create a VPC Internet Gateway
+
+ * [instance.tf](https://www.terraform.io/docs/providers/aws/r/instance.html)
+    
+    - provides an EC2 instance resources
+
+ * [key_pair.tf](https://www.terraform.io/docs/providers/aws/r/key_pair.html)
+
+    - key_pair deployer
+
+ * [networking.tf](https://www.terraform.io/docs/providers/type/network-index.html)
+
+    - networking resources provided in this file 
+
+ * [null_resource.tf](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource)
+
+    - resources that implements the standar lifecycle. 
+    - Jenkis password will be displayd at the end. 
+    - all atributes for Jenkis installation called remote-exec provisioner. 
+
+ * [private_subnet.tf](https://www.terraform.io/docs/providers/aws/r/subnet.html)
+
+    - resources for private subnets
+
+ * [provider.tf](https://www.terraform.io/docs/providers/index.html)
+
+    - provider is responsible for understanding API interactions and exposing resources. 
+
+ * [public_subnet.tf] (https://www.terraform.io/docs/providers/aws/r/subnet.html)
+    
+        - resources for public subnets. 
+
+ * [securitygroupaws.tf](https://www.terraform.io/docs/providers/aws/r/security_group.html)
+
+        - resources for security groups. 
+
+ * [setenv.sh](https://www.terraform.io/docs/commands/environment-variables.html)
+
+        - resources for set environmental variables
+
+ * [variable.tf](https://www.terraform.io/docs/configuration/variables.html)
+
+        - variables set-up
+
+ * [vpc.tf](https://www.terraform.io/docs/providers/aws/r/vpc.html)
+
+    - VPC resources
+
+    /configurations/regions
+
+
+    * [.tfvarsfiles](https://www.terraform.io/docs/configuration/variables.html)
+
+        - variable definitions files, each regions has .tfvars files.               
+
+    * bahrain.tfvars
+    * canada.tfvars
+    * frankfurt.tfvars
+    * hong_kong.tfvars
+    * ireland.tfvars
+    * london.tfvars
+    * milan.tfvars
+    * mumbai.tfvars
+    * ohio.tfvars
+    * oregon.tfvars
+    * paris.tfvars
+    * sao_paulo.tfvars
+    * seoul.tfvars
+    * singapore.tfvars
+    * stockholm.tfvars
+    * sydney.tfvars
+    * tokyo.tfvars
+    * virginia.tfvars
