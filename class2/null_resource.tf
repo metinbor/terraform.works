@@ -21,7 +21,8 @@ resource "null_resource" "jenkins_password" {
       "sudo yum install -y jenkins",
       "sudo systemctl start jenkins",
       "sudo systemctl enable jenkins",
-      "echo -e $(tput setaf 1 )'Jenkins initialAdminPassword: '$(tput sgr0) $(tput setaf 2)`sudo cat /var/lib/jenkins/secrets/initialAdminPassword`$(tput sgr0)",  
+      "echo -e $(tput setaf 1 )'Jenkins initialAdminPassword: '$(tput sgr0) $(tput setaf 2)",
+      "sudo cat /var/lib/jenkins/secrets/initialAdminPassword",  
     ] // This is a list of command strings. They are executed in the order they are provided
   } 
 }

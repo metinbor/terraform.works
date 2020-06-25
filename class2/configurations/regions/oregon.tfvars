@@ -26,11 +26,11 @@ private_cidr_block2 = "10.0.2.0/24"
 private_cidr_block3 = "10.0.3.0/24"
 
 
-image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
+ 
 owner_name = "amazon"
 instance_type = "t2.micro"
-ami = "ami-0323c3dd2da7fb37d"
-
+image_value = "amzn2-ami-hvm-2.0.*"
+ami = "137112412989"
 
 az1 = "a"
 az2 = "b"

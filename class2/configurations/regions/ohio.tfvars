@@ -8,10 +8,10 @@ s3_folder_region                =   "us-east-1"
 s3_folder_type                  =   "tools"
 s3_tfstate_file                 =   "jenkins.tfstate"
 
-image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
-owner_name = "amazon"
 instance_type = "t2.micro"
-ami = "ami-0323c3dd2da7fb37d"
+owner_name = "amazon"
+image_value = "amzn2-ami-hvm-2.0.*"
+ami = "137112412989"
 
 
 az1 = "a"

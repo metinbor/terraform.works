@@ -7,6 +7,10 @@ data "aws_ami" "amazon" {
   }
 }
 
+output "AMAZON_AMI_ID" {
+  value = "${data.aws_ami.amazon.id}"
+}
+
 resource "aws_instance" "my_instance" {
   ami                    = "${data.aws_ami.amazon.id}"
   instance_type          = "${var.instance_type}"
