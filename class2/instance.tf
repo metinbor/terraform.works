@@ -2,7 +2,6 @@ data "aws_ami" "amazon" {
   most_recent = true
   owners      = ["${var.owner_name}"]
 
-  
   filter {
     name   = "name"
     values = ["${var.image_value}"]
@@ -17,26 +16,19 @@ resource "aws_instance" "my_instance" {
   ami                    = "${data.aws_ami.amazon.id}"
   instance_type          = "${var.instance_type}"
   availability_zone      = "${var.region}${var.az1}"
-  vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
+  vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}", "${aws_security_group.sg_ssh.id}"]
   subnet_id              = "${aws_subnet.public_subnet1.id}"
-  key_name = "${aws_key_pair.bastion_key.key_name}"
+  key_name               = "${aws_key_pair.bastion_key.key_name}"
 
-tags = {
+  tags = {
     Name = "Jenkis-Server"
   }
-
-
 }
-
-
 
 # image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
 # owner_name = "amazon"
 # instance_type = "t2.micro"
 # ami = "ami-0323c3dd2da7fb37d"
-
-
-
 
 
 # resource "aws_instance" "my_instance" {
@@ -45,10 +37,11 @@ tags = {
 #    key_name = "${aws_key_pair.bastion_key.key_name}"
 #    vpc_security_group_ids = ["${aws_security_group.sg_http_https.id}","${aws_security_group.sg_ssh.id}"]
 #    subnet_id      = "${aws_subnet.public_subnet1.id}"
-   
+
 
 #   user_data = <<EOF
 #     #!/bin/bash
+
 
 #     echo "Install Jenkins stable release"
 #     yum remove -y java
@@ -58,6 +51,7 @@ tags = {
 #     yum install -y jenkins
 #     chkconfig jenkins on
 
+
 #     echo "Install Telegraf"
 #     wget https://dl.influxdata.com/telegraf/releases/telegraf-1.6.0-1.x86_64.rpm -O /tmp/telegraf.rpm
 #     yum localinstall -y /tmp/telegraf.rpm
@@ -66,8 +60,10 @@ tags = {
 #     mv /tmp/telegraf.conf /etc/telegraf/telegraf.conf
 #     service telegraf start
 
+
 #     echo "Install git"
 #     yum install -y git
+
 
 #     echo "Setup SSH key"
 #     mkdir /var/lib/jenkins/.ssh
@@ -76,6 +72,7 @@ tags = {
 #     chmod 700 /var/lib/jenkins/.ssh
 #     mv /tmp/id_rsa /var/lib/jenkins/.ssh/id_rsa
 #     chmod 600 /var/lib/jenkins/.ssh/id_rsa
+
 
 #     echo "Configure Jenkins"
 #     mkdir -p /var/lib/jenkins/init.groovy.d
@@ -90,10 +87,13 @@ tags = {
 #     chmod +x /tmp/install-plugins.sh
 #     bash /tmp/install-plugins.sh
 #     service jenkins start
-    
+
+
 #   EOF
+
 
 #   tags = {
 #       Name = "jenkins"
 #       }
 # }
+

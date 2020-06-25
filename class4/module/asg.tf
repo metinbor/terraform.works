@@ -1,8 +1,6 @@
-provider "aws" { 
-
-region = "us-east-1" 
-
-} 
+provider "aws" {
+  region = "us-east-1"
+}
 
 data "aws_ami" "image" {
   most_recent = true
@@ -15,8 +13,8 @@ resource "aws_launch_template" "example" {
 
   image_id = "${data.aws_ami.image.id}"
 
-  instance_type = "c5.large"
-  key_name      = "${aws_key_pair.us-east-1-key.key_name}"
+  instance_type          = "c5.large"
+  key_name               = "${aws_key_pair.us-east-1-key.key_name}"
   vpc_security_group_ids = ["${aws_security_group.asg-sec-group.id}"]
 }
 

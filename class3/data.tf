@@ -15,10 +15,10 @@ data "aws_ami" "ubuntu" {
   }
 
   owners = ["099720109477"] # Canonica
-
 }
+
 output "AMI_ID" {
-value = "${data.aws_ami.ubuntu.id}"
+  value = "${data.aws_ami.ubuntu.id}"
 }
 
 resource "aws_instance" "web" {

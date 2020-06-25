@@ -1,23 +1,20 @@
 resource "aws_subnet" "public_subnet1" {
-  vpc_id     = "${aws_vpc.main.id}"
-  cidr_block = "${var.public_cidr_block1}" 
+  vpc_id                  = "${aws_vpc.main.id}"
+  cidr_block              = "${var.public_cidr_block1}"
   map_public_ip_on_launch = true
-  availability_zone = "${var.region}a"
-  }
+  availability_zone       = "${var.region}a"
+}
 
-
-  resource "aws_subnet" "public_subnet2" {
-  vpc_id     = "${aws_vpc.main.id}"
-  cidr_block = "${var.public_cidr_block2}"
+resource "aws_subnet" "public_subnet2" {
+  vpc_id                  = "${aws_vpc.main.id}"
+  cidr_block              = "${var.public_cidr_block2}"
   map_public_ip_on_launch = true
-  availability_zone = "${var.region}b"
+  availability_zone       = "${var.region}b"
+}
 
-   
-  }
-
-  resource "aws_subnet" "public_subnet3" {
-  vpc_id     = "${aws_vpc.main.id}"
-  cidr_block = "${var.public_cidr_block3}"
+resource "aws_subnet" "public_subnet3" {
+  vpc_id                  = "${aws_vpc.main.id}"
+  cidr_block              = "${var.public_cidr_block3}"
   map_public_ip_on_launch = true
-  availability_zone = "${var.region}c"
+  availability_zone       = "${var.region}c"
 }
