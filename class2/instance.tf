@@ -1,6 +1,8 @@
 data "aws_ami" "amazon" {
   most_recent = true
   owners      = ["${var.owner_name}"]
+
+  
   filter {
     name   = "name"
     values = ["${var.image_value}"]
@@ -19,7 +21,13 @@ resource "aws_instance" "my_instance" {
   subnet_id              = "${aws_subnet.public_subnet1.id}"
   key_name = "${aws_key_pair.bastion_key.key_name}"
 
+tags = {
+    Name = "Jenkis-Server"
+  }
+
+
 }
+
 
 
 # image_value = "amzn2-ami-hvm-2.0.20200406.0-x86_64-ebs*"
