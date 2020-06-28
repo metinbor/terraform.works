@@ -1,4 +1,5 @@
 module "app1" {
   source       = "./module"
-  image_owners = "137112412989" # Canonic
+  region = "us-east-1"
+  #image_owners = "137112412989" # Canonic
 }

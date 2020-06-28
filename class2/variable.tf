@@ -25,6 +25,11 @@ variable "az3" {}
 
 variable "user" {}
 
+variable "tags" {
+    type = "map"
+}
+
+
 # variable "a" {}
 # variable "b" {}
 # variable "c" {}
