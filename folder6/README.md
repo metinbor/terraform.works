@@ -1,4 +1,4 @@
-# terraform.code1
+# terraform.code
 
 # you may get this errror and the solution of the problem is to use subnets that are recomende in the error. 
 
