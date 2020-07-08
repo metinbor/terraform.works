@@ -1,2 +1,2 @@
-# terraform.code1
+# terraform.code
 Scope of this code is to read the terraform.tfstate file from S3 bucket. Take the output and to create reources. 
