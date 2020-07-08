@@ -2,9 +2,9 @@ provider "azurerm" {
   version = "1.27"
 }
 
-terraform {
-  required_version = "0.11.14"
-}
+// terraform {
+//   required_version = "0.11.14"
+// }
 
 
 # These resources are to be created before running "terraform init" 
