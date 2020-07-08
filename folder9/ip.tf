@@ -1,69 +1,39 @@
-resource "azurerm_network_interface" "nic1" { 
+resource "azurerm_public_ip" "IP" { 
 
-	name = "nic1" 
+	name = "public_ip" 
   
 	location = "${var.location}" 
   
 	resource_group_name = "${var.resource_group_name}" 
   
-	ip_configuration { 
-  
-	  name = "testconfiguration1" 
-  
-	  subnet_id = "${azurerm_subnet.private1.id}" 
-  
-	  private_ip_address_allocation = "Dynamic" 
-  
-	  public_ip_address_id = "${azurerm_public_ip.IP.id}" 
-  
-	} 
+	allocation_method = "Dynamic" 
   
   } 
   
    
   
-  resource "azurerm_network_interface" "nic2" { 
+  resource "azurerm_public_ip" "IP2" { 
   
-	name = "nic2" 
+	name = "public_ip2" 
   
 	location = "${var.location}" 
   
 	resource_group_name = "${var.resource_group_name}" 
   
-	ip_configuration { 
-  
-	  name = "testconfiguration2" 
-  
-	  subnet_id = "${azurerm_subnet.private2.id}" 
-  
-	  private_ip_address_allocation = "Dynamic" 
-  
-	  public_ip_address_id = "${azurerm_public_ip.IP2.id}" 
-  
-	} 
+	allocation_method = "Dynamic" 
   
   } 
   
    
   
-  resource "azurerm_network_interface" "nic3" { 
+  resource "azurerm_public_ip" "IP3" { 
   
-	name = "nic3" 
+	name = "public_ip3" 
   
 	location = "${var.location}" 
   
 	resource_group_name = "${var.resource_group_name}" 
   
-	ip_configuration { 
+	allocation_method = "Dynamic" 
   
-	  name = "testconfiguration3" 
-  
-	  subnet_id = "${azurerm_subnet.private3.id}" 
-  
-	  private_ip_address_allocation = "Dynamic" 
-  
-	  public_ip_address_id = "${azurerm_public_ip.IP3.id}" 
-  
-	} 
-  
-  }
+  } 
